@@ -146,4 +146,4 @@ AUTH_USER_MODEL = "account.User"
 
 
 # zarinpal confige
-MERCHANT = "a8385ddb-c54d-46eb-b6f6-7642bbf70bb3"
+MERCHANT = "00000000000000000000000"
