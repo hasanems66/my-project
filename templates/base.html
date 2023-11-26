@@ -1,0 +1,40 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'includes/head_links.html' %}
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    {% include 'includes/topbar.html' %}
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+        {% include 'includes/navbar.html' %}
+    <!-- Navbar End -->
+
+
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+
+
+    <!-- Footer Start -->
+    {% include 'includes/footer.html' %}
+    <!-- Footer End -->
+
+
+   {% include 'includes/footer_links.html' %}
+</body>
+
+</html>

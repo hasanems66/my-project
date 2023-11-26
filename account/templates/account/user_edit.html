@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">User Edite Profile</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="{% url 'home:main' %}">Home</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Profile</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Edite User Profile</span></h2>
+        </div>
+        <div class="row px-xl-5 justify-content-center">
+
+                <div class="col-lg-7 mb-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="control-group text-left">
+                                {{ form.non_field_errors }}
+{#                                <label for="{{ form.phone.id_for_label }}" class="col-12">Phonenumber: </label>#}
+                                {{ form.phone.label }}
+                                 {% if form.phone.errors %}
+                                    <div class="alert alert-danger">{{ form.phone.errors }}</div>
+                                {% endif %}
+                               {{ form.phone|attr:'class:form-control' }}
+{#                                <p class="help-block text-danger"></p>#}
+                            </div>
+                            <div class="control-group">
+                                 {{ form.fullname.label }}
+                                {% if form.fullname.errors %}
+                                    <div class="alert alert-danger">{{ form.fullname.errors }}</div>
+                                {% endif %}
+                                {{ form.fullname |attr:'class:form-control' }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                 {{ form.email.label }}
+                              {{ form.email |attr:'class:form-control'}}
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div>
+                                <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
+                                    Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+        <!-- Contact End -->
+
+{% endblock %}
